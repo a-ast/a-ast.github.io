@@ -1,40 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Symfony Trends</title>
 
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/common.css" />
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="js/venn/venn.js"></script>
     <script src="js/bar-chart.js"></script>
+    <script src="js/line-chart.js"></script>
+    <script src="js/map-chart.js"></script>
     <!-- https://github.com/benfred/venn.js -->
-    <script src="js/venn-contributors.js"></script>
-
+    <script src="js/venn-diagramm.js"></script>
 </head>
 
-<h1>Symfony Trends</h1>
+<body>
+<div class="content">
+<div class="row">
+    <div class="col-md-12">
+        <h1>Symfony Trends</h1>
+    </div>
+</div>
 
-<h2>Contributor count per version</h2>
-<div id="chart1" class="bar-chart" width="960" height="500"></div>
 
-<h2>How many developers contribute to different projects</h2>
-<div id="chart2" class="venn-diagramm" width="960" height="500"></div>
+    
+    
+        <div class="row">
 
-<h2>Number of developers who made certain count of commits to Symfony</h2>
-<div id="chart3" class="bar-chart" width="960" height="500"></div>
+            
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                    <h2>Where Symfony contributors live and work</h2>
 
-<h2>Number of developers who made certain count of commits to Symfony docs</h2>
-<div id="chart4" class="bar-chart" width="960" height="500"></div>
+                                            <iframe src="contributors_per_country_symfony.html" id="contributors_per_country_symfony" class="chart" scrolling="no"></iframe>
+                                    </div>
 
-<script>
+            
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                    <h2>How many developers contribute to different projects</h2>
 
-    drawBarChart("#chart1", "data/contributors_per_version_1.json", "Symfony version");
-    drawVennContributors("#chart2", "data/contributor_intersection.json");
-    drawBarChart("#chart3", "data/commit_count_distribution_1.json", "Commit count");
-    drawBarChart("#chart4", "data/commit_count_distribution_2.json", "Commit count");
+                                            <div id="contributors_intersection" class="chart venn-chart"></div>
+                        <script>
+                            drawVennChart("#contributors_intersection", "data/contributors_intersection.json", "");
+                        </script>
+                                    </div>
 
-</script>
+                    </div>
 
+    
+        <div class="row">
+
+            
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                    <h2>Number of developers who made certain count of commits to &lt;b&gt;Symfony&lt;/b&gt;</h2>
+
+                                            <div id="commit_count_distribution_symfony" class="chart bar-chart"></div>
+                        <script>
+                            drawBarChart("#commit_count_distribution_symfony", "data/commit_count_distribution_symfony.json", "");
+                        </script>
+                                    </div>
+
+            
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                    <h2>Number of developers who made certain count of commits to Symfony docs</h2>
+
+                                            <div id="commit_count_distribution_symfony_docs" class="chart bar-chart"></div>
+                        <script>
+                            drawBarChart("#commit_count_distribution_symfony_docs", "data/commit_count_distribution_symfony_docs.json", "");
+                        </script>
+                                    </div>
+
+                    </div>
+
+    
+        <div class="row">
+
+            
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                    <h2>Commit count to Symfony per year</h2>
+
+                                            <div id="contributions_per_date_yearly_symfony" class="chart bar-chart"></div>
+                        <script>
+                            drawBarChart("#contributions_per_date_yearly_symfony", "data/contributions_per_date_yearly_symfony.json", "");
+                        </script>
+                                    </div>
+
+            
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                    <h2>Commit count to Symfony documentation per year</h2>
+
+                                            <div id="contributions_per_date_yearly_symfony_doc" class="chart bar-chart"></div>
+                        <script>
+                            drawBarChart("#contributions_per_date_yearly_symfony_doc", "data/contributions_per_date_yearly_symfony_doc.json", "");
+                        </script>
+                                    </div>
+
+                    </div>
+
+    </div>
+</body>
 </html>

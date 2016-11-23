@@ -2,6 +2,10 @@ body {
     font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
 }
 
+.content {
+    padding: 15px;
+}
+
 h1, h2, h3 {
     font-family: Georgia,"Times New Roman",Times,serif;
 }
@@ -14,8 +18,14 @@ h2 {
     font-size: 25px;
 }
 
+.chart {
+    width: 540px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
 .bar-chart rect {
-    fill: #08c;
+    fill: #53A3CC;
 }
 
 .bar-chart .bar-label {
@@ -25,14 +35,14 @@ h2 {
 }
 
 .bar-chart rect:hover {
-    fill: #005580;
+    stroke: #015a87;
 }
 
 /*.axis--x path {*/
     /*display: none;*/
 /*}*/
 
-.axis text {
+.axis label {
     font: 15px sans-serif;
     fill: #005580;
 }
@@ -48,4 +58,15 @@ h2 {
     font-size: 19px;
     font-weight: bold;
     fill: #005580;
+}
+
+.line {
+    fill: none;
+    stroke: #08c;
+    stroke-width: 2px;
+}
+
+iframe {
+    overflow: hidden;
+    border: 0;
 }
