@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Symfony Trends</title>
+
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/maps/modules/map.js"></script>
+    <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
+</head>
+
+<body>
+<div class="row header">
+    <div class="col-md-12">
+        <h1>Symfony Trends <sup>beta</sup></h1>
+        <p class="sub-header">Statistics for Symfony framework and related projects</p>
+
+    </div>
+</div>
+
+<div class="content">
+
+
+    
+    
+        <div class="row">
+
+            
+                                
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                    <h2>How many developers contribute to different projects</h2>
+
+
+                    <div id="contributors_intersection" class="chart pie-chart"></div>
+                    <script>
+
+                        $.getJSON('data/contributors_intersection.json', function(data) {
+                            new Highcharts.Chart('contributors_intersection', data);
+                        });
+                    </script>
+
+                </div>
+
+            
+                                
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                    <h2>Commit count to Symfony framework and documentation per year</h2>
+
+
+                    <div id="contributions_per_date_yearly" class="chart column-chart"></div>
+                    <script>
+
+                        $.getJSON('data/contributions_per_date_yearly.json', function(data) {
+                            new Highcharts.Chart('contributions_per_date_yearly', data);
+                        });
+                    </script>
+
+                </div>
+
+                    </div>
+
+    
+        <div class="row">
+
+            
+                                
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                    <h2>Number of developers who made certain count of commits to Symfony</h2>
+
+
+                    <div id="commit_count_distribution_symfony" class="chart column-chart"></div>
+                    <script>
+
+                        $.getJSON('data/commit_count_distribution_symfony.json', function(data) {
+                            new Highcharts.Chart('commit_count_distribution_symfony', data);
+                        });
+                    </script>
+
+                </div>
+
+            
+                                
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                    <h2>Number of developers who made certain count of commits to Symfony docs</h2>
+
+
+                    <div id="commit_count_distribution_symfony_docs" class="chart column-chart"></div>
+                    <script>
+
+                        $.getJSON('data/commit_count_distribution_symfony_docs.json', function(data) {
+                            new Highcharts.Chart('commit_count_distribution_symfony_docs', data);
+                        });
+                    </script>
+
+                </div>
+
+                    </div>
+
+    
+        <div class="row">
+
+            
+                                
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                    <h2>Commit count to Symfony per month</h2>
+
+
+                    <div id="contributions_per_date_monthly_symfony" class="chart area-chart"></div>
+                    <script>
+
+                        $.getJSON('data/contributions_per_date_monthly_symfony.json', function(data) {
+                            new Highcharts.Chart('contributions_per_date_monthly_symfony', data);
+                        });
+                    </script>
+
+                </div>
+
+            
+                                
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                    <h2>Commit count to Symfony per year</h2>
+
+
+                    <div id="contributions_per_date_yearly_symfony" class="chart area-chart"></div>
+                    <script>
+
+                        $.getJSON('data/contributions_per_date_yearly_symfony.json', function(data) {
+                            new Highcharts.Chart('contributions_per_date_yearly_symfony', data);
+                        });
+                    </script>
+
+                </div>
+
+                    </div>
+
+    
+        <div class="row">
+
+            
+                                
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                    <h2>Commit count to Symfony documentation per month</h2>
+
+
+                    <div id="contributions_per_date_monthly_symfony_docs" class="chart area-chart"></div>
+                    <script>
+
+                        $.getJSON('data/contributions_per_date_monthly_symfony_docs.json', function(data) {
+                            new Highcharts.Chart('contributions_per_date_monthly_symfony_docs', data);
+                        });
+                    </script>
+
+                </div>
+
+            
+                                
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                    <h2>Commit count to Symfony documentation per year</h2>
+
+
+                    <div id="contributions_per_date_yearly_symfony_docs" class="chart area-chart"></div>
+                    <script>
+
+                        $.getJSON('data/contributions_per_date_yearly_symfony_docs.json', function(data) {
+                            new Highcharts.Chart('contributions_per_date_yearly_symfony_docs', data);
+                        });
+                    </script>
+
+                </div>
+
+                    </div>
+
+    
+        <div class="row">
+
+            
+                                                                    
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                    <h2>Where Symfony contributors live and work</h2>
+
+
+                    <div id="contributors_per_country_symfony" class="chart map-chart"></div>
+                    <script>
+
+                        $.getJSON('data/contributors_per_country_symfony.json', function(data) {
+                            new Highcharts.mapChart('contributors_per_country_symfony', data);
+                        });
+                    </script>
+
+                </div>
+
+                    </div>
+
+    </div>
+</body>
+</html>
