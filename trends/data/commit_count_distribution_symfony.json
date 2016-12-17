@@ -1,0 +1,75 @@
+{
+    "options": {
+        "type": "column"
+    },
+    "series": [
+        {
+            "data": [
+                {
+                    "name": "200+",
+                    "value": 11
+                },
+                {
+                    "name": "30-200",
+                    "value": 46
+                },
+                {
+                    "name": "10-30",
+                    "value": 93
+                },
+                {
+                    "name": "5-10",
+                    "value": 130
+                },
+                {
+                    "name": "3-5",
+                    "value": 199
+                },
+                {
+                    "name": "2",
+                    "value": 239
+                },
+                {
+                    "name": "1",
+                    "value": 899
+                }
+            ],
+            "name": "Symfony code",
+            "color": "#4cacdb"
+        },
+        {
+            "data": [
+                {
+                    "name": "200+",
+                    "value": 6
+                },
+                {
+                    "name": "30-200",
+                    "value": 17
+                },
+                {
+                    "name": "10-30",
+                    "value": 80
+                },
+                {
+                    "name": "5-10",
+                    "value": 138
+                },
+                {
+                    "name": "3-5",
+                    "value": 190
+                },
+                {
+                    "name": "2",
+                    "value": 210
+                },
+                {
+                    "name": "1",
+                    "value": 662
+                }
+            ],
+            "name": "Symfony docs",
+            "color": "#7aba20"
+        }
+    ]
+}
